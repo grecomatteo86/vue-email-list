@@ -2,7 +2,8 @@ var app = new Vue (
   {
     el:"#app",
     data:{
-      mail:''
+      mail:'',
+      mailArray:[]
     },
     mounted:function(){
 
@@ -13,6 +14,11 @@ var app = new Vue (
         // const result = response.data;
         console.log(response.data.response);
         self.mail = response.data.response;
+
+        for ( i = 0; i < 10; i++) {
+          self.mailArray.push(response.data.response);
+          console.log(self.mailArray);
+        }
 
       });
     }
