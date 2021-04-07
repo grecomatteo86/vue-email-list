@@ -9,18 +9,21 @@ var app = new Vue (
 
       var self = this;
 
-      axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-      .then(function (response) {
-        // const result = response.data;
-        console.log(response.data.response);
-        self.mail = response.data.response;
+      for ( i = 0; i < 10; i++) {
 
-        for ( i = 0; i < 10; i++) {
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        .then(function (response) {
+
           self.mailArray.push(response.data.response);
           console.log(self.mailArray);
-        }
 
-      });
+          
+        });
+
+      }
+
+
+
     }
   }
 )
